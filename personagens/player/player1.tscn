@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://assetsPersons/player/attack/attack3.tres" type="Texture" id=1]
 [ext_resource path="res://assetsPersons/player/attack/attack2.tres" type="Texture" id=2]
@@ -33,6 +33,16 @@
 [ext_resource path="res://assetsPersons/player/attack/attack7.tres" type="Texture" id=31]
 [ext_resource path="res://assetsPersons/player/run/run3.tres" type="Texture" id=32]
 [ext_resource path="res://assetsPersons/player/fall/fall1.tres" type="Texture" id=33]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack8.tres" type="Texture" id=34]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack4.tres" type="Texture" id=35]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack2.tres" type="Texture" id=36]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack3.tres" type="Texture" id=37]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack9.tres" type="Texture" id=38]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack5.tres" type="Texture" id=39]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack7.tres" type="Texture" id=40]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack0.tres" type="Texture" id=41]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack6.tres" type="Texture" id=42]
+[ext_resource path="res://assetsPersons/player/movAttack/movAttack1.tres" type="Texture" id=43]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -61,18 +71,32 @@ animations = [ {
 "name": "jumpToFall",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 41 ), ExtResource( 43 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 34 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "movAttack",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 27 ), ExtResource( 13 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
 } ]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 13.0
+height = 36.0
+
+[node name="Player" type="KinematicBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-animation = "attack"
-frame = 10
+animation = "idle"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
