@@ -1,0 +1,78 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://assetsPersons/player/attack/attack3.tres" type="Texture" id=1]
+[ext_resource path="res://assetsPersons/player/attack/attack2.tres" type="Texture" id=2]
+[ext_resource path="res://assetsPersons/player/jump/jump1.tres" type="Texture" id=3]
+[ext_resource path="res://assetsPersons/player/idle/idle1.tres" type="Texture" id=4]
+[ext_resource path="res://assetsPersons/player/idle/idle2.tres" type="Texture" id=5]
+[ext_resource path="res://assetsPersons/player/idle/idle3.tres" type="Texture" id=6]
+[ext_resource path="res://assetsPersons/player/attack/attack0.tres" type="Texture" id=7]
+[ext_resource path="res://assetsPersons/player/attack/attack5.tres" type="Texture" id=8]
+[ext_resource path="res://assetsPersons/player/run/run5.tres" type="Texture" id=9]
+[ext_resource path="res://assetsPersons/player/idle/idle5.tres" type="Texture" id=10]
+[ext_resource path="res://assetsPersons/player/fall/fall2.tres" type="Texture" id=11]
+[ext_resource path="res://assetsPersons/player/jumpToFall/jumpToFall0.tres" type="Texture" id=12]
+[ext_resource path="res://assetsPersons/player/run/run1.tres" type="Texture" id=13]
+[ext_resource path="res://assetsPersons/player/attack/attack8.tres" type="Texture" id=14]
+[ext_resource path="res://assetsPersons/player/attack/attack1.tres" type="Texture" id=15]
+[ext_resource path="res://assetsPersons/player/run/run6.tres" type="Texture" id=16]
+[ext_resource path="res://assetsPersons/player/jump/jump2.tres" type="Texture" id=17]
+[ext_resource path="res://assetsPersons/player/attack/attack11.tres" type="Texture" id=18]
+[ext_resource path="res://assetsPersons/player/attack/attack10.tres" type="Texture" id=19]
+[ext_resource path="res://assetsPersons/player/attack/attack4.tres" type="Texture" id=20]
+[ext_resource path="res://assetsPersons/player/attack/attack6.tres" type="Texture" id=21]
+[ext_resource path="res://assetsPersons/player/jump/jump0.tres" type="Texture" id=22]
+[ext_resource path="res://assetsPersons/player/jumpToFall/jumpToFall1.tres" type="Texture" id=23]
+[ext_resource path="res://assetsPersons/player/attack/attack9.tres" type="Texture" id=24]
+[ext_resource path="res://assetsPersons/player/fall/fall0.tres" type="Texture" id=25]
+[ext_resource path="res://assetsPersons/player/run/run7.tres" type="Texture" id=26]
+[ext_resource path="res://assetsPersons/player/run/run0.tres" type="Texture" id=27]
+[ext_resource path="res://assetsPersons/player/run/run2.tres" type="Texture" id=28]
+[ext_resource path="res://assetsPersons/player/run/run4.tres" type="Texture" id=29]
+[ext_resource path="res://assetsPersons/player/idle/idle4.tres" type="Texture" id=30]
+[ext_resource path="res://assetsPersons/player/attack/attack7.tres" type="Texture" id=31]
+[ext_resource path="res://assetsPersons/player/run/run3.tres" type="Texture" id=32]
+[ext_resource path="res://assetsPersons/player/fall/fall1.tres" type="Texture" id=33]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 20 ), ExtResource( 8 ), ExtResource( 21 ), ExtResource( 31 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 33 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "fall",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 30 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 3 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "jump",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "jumpToFall",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 13 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "attack"
+frame = 10
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
